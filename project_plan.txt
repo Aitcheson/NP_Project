@@ -1,0 +1,19 @@
+Team:
+
+1. Dylan Aitcheson - Part A and Part B
+
+2. Luke Davis - Part C and Part D
+
+We plan to share the responsibility for part E and part F 
+
+Problems:
+
+1. Min Vertex Cover
+
+2. Max 3-SAT
+
+3. Min Graph Coloring
+
+Github Repo Link
+
+https://github.com/Aitcheson/NP_Project
