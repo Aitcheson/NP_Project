@@ -1,5 +1,5 @@
 get adjancey list for all vertex.
-delete edges as encountered until there is no edges left or there is.
+
 
 
 np-verifyer
