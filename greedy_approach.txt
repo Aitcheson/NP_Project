@@ -1,3 +1,46 @@
 For the approximation solution we are using a greedy approach. First, we will take the vertex with the highest degree 
 and select this vertex. We will then send this possible solution to the np-verifier. If the verifier returns false, we
 select the next highest degree. If two vertices have the same degree, then we will randomly choose one.
+
+Pseudocode:
+find_min_cover (adj_matrix) {
+  result = set()
+
+  new_adj, removed_vertex = remove_highest_degree(adj_matrix)
+
+  result.add(removed_vertex)
+  if (check_edges(new_adj)) {
+    return result
+  } else {
+	result.add(find_min_cover(new_adj))
+	return result
+  }
+}
+
+remove_highest_degree(adj_matrix) {
+	// This will return a tuple, the first element will be the removed vertex and the second element will be 
+	// the remaining adj_matrix without the vertex and edges associated with it. It will utilize randomness to 
+	// break ties in degree
+
+}
+
+check_edges(adj_matrix) {
+	// this will first check if there are any edges left in the adj_matrix
+	// True if there are no edges
+	// False otherwise
+}
+
+main () {
+	// take input
+	// construct adj_matrix
+	// adj_matrix = 
+	// {
+	//	  a : [b, c]
+	//	  b : [a, c]
+	//    c : [a, b, d]
+	//    d : [c]
+	// }
+	
+	// call find_min_cover(adj_matrix)
+	// verify with np_verifier(adj_matrix, find_min_cover(adj_matrix))
+}
