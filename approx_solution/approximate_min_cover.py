@@ -92,13 +92,20 @@ def main():
     """
     Main function to take input, construct adjacency matrix, find the vertex cover, and verify it.
     """
-    # Example input
-    edges = [(1, 2), (2, 3), (3, 5), (3, 4)]
-    nonoptimal_edges = [(1, 2), (1, 3), (1, 4), (2, 5), (3, 6), (4, 7)]
+    #  # Example input without user input
+    # edges = [(1, 2), (2, 3), (3, 5), (3, 4)]
+    # nonoptimal_edges = [(1, 2), (1, 3), (1, 4), (2, 5), (3, 6), (4, 7)]
+    
+    num_edges = int(input())
+    edges = []
+
+    for _ in range(num_edges):
+        u, v = map(int, input().split())
+        edges.append((u, v))
 
     # Construct adjacency matrix (using a dictionary of lists for simplicity)
     adj_matrix = {}
-    for u, v in nonoptimal_edges:
+    for u, v in edges:
         adj_matrix.setdefault(u, []).append(v)
         adj_matrix.setdefault(v, []).append(u)
 
