@@ -1,6 +1,6 @@
 #test for 1001 vertices, 
 #test contains 1000 edges between 1001 verticies
-1000
+1001
 1, 2
 1, 3
 2, 4
