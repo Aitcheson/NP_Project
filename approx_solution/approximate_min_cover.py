@@ -38,7 +38,7 @@ def check_edges(adj_matrix):
         adj_matrix ({[]}): adjacency matrix containing the graph
 
     Returns:
-        bool: True if no edges are present, False if an edge is found
+        boolean: True if no edges are present, False if an edge is found
     """
     for neighbors in adj_matrix.values():
         if neighbors:
@@ -80,7 +80,7 @@ def np_verifier(adj_matrix, cover):
         cover ([]): list of vertices containing a possible minimum vertex cover solution
 
     Returns:
-        bool: True if the solution is valid, False otherwise
+        boolean: True if the solution is valid, False otherwise
     """
     for v, neighbors in adj_matrix.items():
         for neighbor in neighbors:
@@ -94,10 +94,11 @@ def main():
     """
     # Example input
     edges = [(1, 2), (2, 3), (3, 5), (3, 4)]
+    nonoptimal_edges = [(1, 2), (1, 3), (1, 4), (2, 5), (3, 6), (4, 7)]
 
     # Construct adjacency matrix (using a dictionary of lists for simplicity)
     adj_matrix = {}
-    for u, v in edges:
+    for u, v in nonoptimal_edges:
         adj_matrix.setdefault(u, []).append(v)
         adj_matrix.setdefault(v, []).append(u)
 
