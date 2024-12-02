@@ -65,7 +65,9 @@ def main():
     # is_valid = np_verifier(adj_matrix, min_cover)
     # print("Is valid vertex cover?", is_valid)
     
-    print(min_cover)
+    # print(min_cover)
+    ans = next(iter(min_cover)) 
+    print(ans)
 
 if __name__ == "__main__":
     main()

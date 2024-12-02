@@ -60,7 +60,10 @@ def main():
     # Find the minimum vertex cover
     min_cover = find_min_cover_exact(adj_matrix)
     # print("Minimum Vertex Cover:", min_cover)
-    print(min_cover)
+    # print(min_cover)
+    
+    ans = next(iter(min_cover)) 
+    print(ans)
 
     # Verify the result using the NP-verifier
     is_valid = np_verifier(adj_matrix, min_cover)
@@ -68,3 +71,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
