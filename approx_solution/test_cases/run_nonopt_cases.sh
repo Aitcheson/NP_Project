@@ -1,3 +1,5 @@
 #!/bin/bash
 echo "Running non-optimal case:"
-python ../approximate_min_cover.py < nonopt_solution.txt
+cat ./test-nonoptimal.txt
+echo "Solution:"
+python ../approximate_min_cover.py < ./test-nonoptimal.txt

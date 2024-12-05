@@ -109,15 +109,16 @@ def main():
         adj_matrix.setdefault(u, []).append(v)
         adj_matrix.setdefault(v, []).append(u)
 
-    print("Adjacency Matrix:", adj_matrix)
+    # print("Adjacency Matrix:", adj_matrix)
 
     # Find the minimum vertex cover
     min_cover = find_min_cover(adj_matrix)
-    print("Minimum Vertex Cover:", min_cover)
+    # print("Minimum Vertex Cover:", min_cover)
+    print(min_cover)
 
     # Verify the result using the NP-verifier
-    is_valid = np_verifier(adj_matrix, min_cover)
-    print("Is valid vertex cover?", is_valid)
+    # is_valid = np_verifier(adj_matrix, min_cover)
+    # print("Is valid vertex cover?", is_valid)
 
 if __name__ == "__main__":
     main()
