@@ -1,7 +1,5 @@
-get adjancey list for all vertex.
+To run bash script:
+    first: chmod +x run_test_cases.sh
+    second: ./run_test_cases.sh
 
-
-
-np-verifyer
-is there edges left? = False
-No edges left = True
+test40.txt and z_big_test.txt both take more than 20 mintues.
