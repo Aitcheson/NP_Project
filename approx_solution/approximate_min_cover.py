@@ -117,10 +117,10 @@ def main():
     min_cover = find_min_cover(adj_matrix)
     end_time = time.time()    # Record end time
     
-    print("Time taken: {:.4f} seconds".format(end_time - start_time))
+    # print("Time taken: {:.4f} seconds".format(end_time - start_time))
     
     # print("Minimum Vertex Cover:", min_cover)
-    print(min_cover)
+    print(" ".join(map(str, sorted(min_cover))))
 
     # Verify the result using the NP-verifier
     # is_valid = np_verifier(adj_matrix, min_cover)
