@@ -1,3 +1,4 @@
+import time
 from itertools import combinations
 
 def find_min_cover_exact(adj_matrix):
@@ -10,7 +11,6 @@ def find_min_cover_exact(adj_matrix):
     for size in range(1, n + 1):
         for subset in combinations(vertices, size):
             subset_set = set(subset)
-            print(subset_set)
             if np_verifier(adj_matrix, subset_set):
                 return subset_set
     return set()
@@ -47,12 +47,17 @@ def main():
     for u, v in edges:
         adj_matrix.setdefault(u, []).append(v)
         adj_matrix.setdefault(v, []).append(u)
-
+        
+    start_time = time.time()  # Record start time
     min_cover = find_min_cover_exact(adj_matrix)
+    end_time = time.time()    # Record end time
 
-    # Verify the result using the NP-verifier 
+    # Print the runtime
+    print("Time taken: {:.4f} seconds".format(end_time - start_time))
+
+    # Verify the result using the NP-verifier
     if min_cover:
-        print(" ".join(map(str, sorted(min_cover))))
+        print("Minimum Vertex Cover:", " ".join(map(str, sorted(min_cover))))
     else:
         print("No valid vertex cover found.")
 
