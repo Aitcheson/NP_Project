@@ -1,6 +1,14 @@
 For the approximation solution we are using a greedy approach. First, we will take the vertex with the highest degree 
-and select this vertex. We will then send this possible solution to the np-verifier. If the verifier returns false, we
-select the next highest degree. If two vertices have the same degree, then we will randomly choose one.
+and select this vertex. All ties of vertices with the same degree will be resolved using random picking. 
+We will then send this possible solution to the np-verifier. If the verifier returns false, we
+select the next highest degree.
+
+Runtime Big O Analysis:
+Computing the degree of each vertex involves iterating through all vertices and their neighbors, which takes 
+O(V + E) time in the worst case, where V is the number of vertices and E is the number of edges. The main find_min_cover
+function calls remove_highest_degree and check_edges repeatedly until all edges are removed. In the worst case, it 
+performs this process once for every vertex. Each call to remove_highest_degree takes O(V + E), and the number of iterations 
+is the number of vertices (V). Therefore, the overall complexity for find_min_cover: O(V * (V + E)) = O(V² + V * E).
 
 Pseudocode:
 find_min_cover (adj_matrix) {
