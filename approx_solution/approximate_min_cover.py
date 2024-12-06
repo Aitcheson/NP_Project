@@ -1,4 +1,5 @@
 import random
+import time
 
 def remove_highest_degree(adj_matrix):
     """Removes the vertex with the highest degree and its associated edges from the adjacency matrix.
@@ -112,7 +113,12 @@ def main():
     # print("Adjacency Matrix:", adj_matrix)
 
     # Find the minimum vertex cover
+    start_time = time.time()  # Record start time
     min_cover = find_min_cover(adj_matrix)
+    end_time = time.time()    # Record end time
+    
+    print("Time taken: {:.4f} seconds".format(end_time - start_time))
+    
     # print("Minimum Vertex Cover:", min_cover)
     print(min_cover)
 
